@@ -21,8 +21,12 @@ class Contents extends Component {
     initShow(e){
         // console.log('fdf',window.scrollTo(100));
         // console.log('initShow');
+        // console.log('this.count',this.props.count);
         if(this.props.count===10){
-            window.scrollTo(0,30);
+           setTimeout(function () {
+               window.scrollTo(0,30);
+           },10);
+            // console.log('had scroll');
         }
         // e.currentTarget.scrollTo(0,100)
     }
@@ -32,11 +36,11 @@ class Contents extends Component {
         let contentsHeight = e.currentTarget.scrollHeight;
         let scrollHeight = window.pageYOffset - 50;
         let windowHeight = window.innerHeight;
-        // console.log(scrollHeight,'scrollHE');
+        console.log(scrollHeight,'scrollHE');
         let loadData = function () {
                 let now = Date.now();
-                console.log('now', now);
-                console.log("到底了");
+                // console.log('now', now);
+                // console.log("到底了");
                 if (now - self.state.lastLoadTime > 2000) {
                     self.state.lastLoadTime = now;
                     self.props.setCount(10);
@@ -103,7 +107,7 @@ class Contents extends Component {
                 return (
                     <div id='contents'  onClick={this.initShow()} onTouchMove={this.loadMore.bind(this)}>
                         <div className='pullToUpdate'>
-                            正在刷新...
+                            下拉刷新...
                         </div >
                         {datas.map((data, index) => {
                             return (
@@ -111,8 +115,8 @@ class Contents extends Component {
                                       returnDetailId={this.returnDetailId.bind(this)} key={index}/>
                             )
                         })}
-                        <div className={'smallLoading'} >
-                            加载中...
+                        <div className={'smallLoading_content'} >
+                            上拉加载更多
                         </div>
                     </div>
                 )

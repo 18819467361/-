@@ -44,18 +44,18 @@ class App extends Component {
     }
 
     setOnShow(value){
-        console.log('insetOnShow');
+        // console.log('insetOnShow');
         this.setState({
             showPage:value
         });
-        console.log('showPage',this.state.showPage);
+        // console.log('showPage',this.state.showPage);
     }
 
     setDetailId(value){
         this.setState({
             detailId:value
         });
-        console.log('setDetailId');
+        // console.log('setDetailId');
     }
 
     setUpdate(){

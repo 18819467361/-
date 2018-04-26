@@ -96,7 +96,7 @@ class SearchBar extends Component {
     //根据输入的keyword、showPage、显示条目数参数确定src
     setSrc(keyword, showPage, count, id) {
         let src;
-        console.log('keyword', keyword);
+        // console.log('keyword', keyword);
         switch (showPage) {
             case 'book':
                 if (id !== '') {
@@ -136,7 +136,7 @@ class SearchBar extends Component {
             default:
                 break;
         }
-        console.log('src', src);
+        // console.log('src', src);
         return src;
     }
 

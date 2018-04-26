@@ -22918,11 +22918,11 @@ var App = function (_Component) {
     }, {
         key: 'setOnShow',
         value: function setOnShow(value) {
-            console.log('insetOnShow');
+            // console.log('insetOnShow');
             this.setState({
                 showPage: value
             });
-            console.log('showPage', this.state.showPage);
+            // console.log('showPage',this.state.showPage);
         }
     }, {
         key: 'setDetailId',
@@ -22930,7 +22930,7 @@ var App = function (_Component) {
             this.setState({
                 detailId: value
             });
-            console.log('setDetailId');
+            // console.log('setDetailId');
         }
     }, {
         key: 'setUpdate',
@@ -23167,8 +23167,12 @@ var Contents = function (_Component) {
         value: function initShow(e) {
             // console.log('fdf',window.scrollTo(100));
             // console.log('initShow');
+            // console.log('this.count',this.props.count);
             if (this.props.count === 10) {
-                window.scrollTo(0, 30);
+                setTimeout(function () {
+                    window.scrollTo(0, 30);
+                }, 10);
+                // console.log('had scroll');
             }
             // e.currentTarget.scrollTo(0,100)
         }
@@ -23181,11 +23185,11 @@ var Contents = function (_Component) {
             var contentsHeight = e.currentTarget.scrollHeight;
             var scrollHeight = window.pageYOffset - 50;
             var windowHeight = window.innerHeight;
-            // console.log(scrollHeight,'scrollHE');
+            console.log(scrollHeight, 'scrollHE');
             var loadData = function loadData() {
                 var now = Date.now();
-                console.log('now', now);
-                console.log("到底了");
+                // console.log('now', now);
+                // console.log("到底了");
                 if (now - self.state.lastLoadTime > 2000) {
                     self.state.lastLoadTime = now;
                     self.props.setCount(10);
@@ -23252,7 +23256,7 @@ var Contents = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'pullToUpdate' },
-                            '\u6B63\u5728\u5237\u65B0...'
+                            '\u4E0B\u62C9\u5237\u65B0...'
                         ),
                         datas.map(function (data, index) {
                             return _react2.default.createElement(_list2.default, { data: data, dataType: self.props.showPage,
@@ -23260,8 +23264,8 @@ var Contents = function (_Component) {
                         }),
                         _react2.default.createElement(
                             'div',
-                            { className: 'smallLoading' },
-                            '\u52A0\u8F7D\u4E2D...'
+                            { className: 'smallLoading_content' },
+                            '\u4E0A\u62C9\u52A0\u8F7D\u66F4\u591A'
                         )
                     );
                 } else {
@@ -23316,7 +23320,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, "#contents{\n    width:100%;\n    margin-top: 52px;\n    overflow: auto;\n    position: relative;\n    height:100%;\n    margin-bottom: 63px;\n    overflow: auto;\n    min-height:900px;\n}\n\n.loadingBox{\n    position: relative;\n    width:100%;\n    height: 700px;\n}\n.loading{\n    width:200px;\n    height:200px;\n    display: block;\n    position: absolute;\n    top:40%;\n    left: 50%;\n    margin-left: -100px;\n    margin-top: -100px;\n    background: transparent url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524470917951&di=4d784e081fb0feffc5809acf743224d0&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2Fuploads%2F1506%2F1-150614203H20-L.jpg\") center center no-repeat;\n    -webkit-transform-style: preserve-3d;\n    -webkit-animation-name: y-spin;\n    -webkit-animation-duration: 2s;\n    -webkit-animation-iteration-count: infinite;\n    -webkit-animation-timing-function: linear;\n}\n\n.smallLoading{\n    margin:5px auto;\n    width:100px;\n    height:50px;\n    font-size: 20px;\n    color: #545454;\n    text-align: center;\n\n}\n\n@-webkit-keyframes y-spin {\n    0%{\n        -webkit-transform: rotate(0deg);\n    }\n    50%{\n        -webkit-transform: rotate(180deg);\n    }\n    100%{\n        -webkit-transform: rotate(360deg);\n    }\n}\n", ""]);
+exports.push([module.i, "@font-face{\n    font-family: 'iconfont';  /* project id 638204 */\n    src: url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.eot');\n    src: url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.eot?#iefix') format('embedded-opentype'),\n    url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.woff') format('woff'),\n    url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.ttf') format('truetype'),\n    url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.svg#iconfont') format('svg');\n}\n.iconfont-content{\n    font-size: 14px;\n}\n#contents{\n    width:100%;\n    margin-top: 52px;\n    overflow: auto;\n    position: relative;\n    height:100%;\n    margin-bottom: 63px;\n    min-height:900px;\n}\n\n.loadingBox{\n    position: relative;\n    width:100%;\n    height: 700px;\n}\n.loading{\n    width:200px;\n    height:200px;\n    display: block;\n    position: absolute;\n    top:40%;\n    left: 50%;\n    margin-left: -100px;\n    margin-top: -100px;\n    background: transparent url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524470917951&di=4d784e081fb0feffc5809acf743224d0&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2Fuploads%2F1506%2F1-150614203H20-L.jpg\") center center no-repeat;\n    -webkit-transform-style: preserve-3d;\n    -webkit-animation-name: y-spin;\n    -webkit-animation-duration: 2s;\n    -webkit-animation-iteration-count: infinite;\n    -webkit-animation-timing-function: linear;\n}\n\n.smallLoading_content{\n    margin:5px auto;\n    width:120px;\n    height:50px;\n    font-size: 14px;\n    color: #a5a5a5;\n    text-align: center;\n\n\n}\n\n@-webkit-keyframes y-spin {\n    0%{\n        -webkit-transform: rotate(0deg);\n    }\n    50%{\n        -webkit-transform: rotate(180deg);\n    }\n    100%{\n        -webkit-transform: rotate(360deg);\n    }\n}\n", ""]);
 
 // exports
 
@@ -23619,9 +23623,9 @@ var DetailPage = function (_Component) {
             // console.log('mode',mode);
             switch (mode) {
                 case 'book':
-                    console.log('in book');
+                    // console.log('in book');
                     analyData.img = data.image ? data.image : '';
-                    console.log('img', analyData.img);
+                    // console.log('img',analyData.img);
                     analyData.title = data.title ? data.title : '';
                     if (data.author) {
                         analyData.author = data.author.join(' ');
@@ -23705,10 +23709,10 @@ var DetailPage = function (_Component) {
         value: function render() {
             var mode = this.props.mode;
             var data = this.props.detailData;
-            console.log('mode', mode);
+            // console.log('mode', mode);
             var analyData = this.analysisData(data, mode);
-            console.log('data', data);
-            console.log('analyData', analyData);
+            // console.log('data', data);
+            // console.log('analyData',analyData);
             switch (mode) {
                 case 'book':
                     return _react2.default.createElement(
@@ -24148,7 +24152,7 @@ var FootBar = function (_Component) {
             if (event.target.id !== this.props.showPage) {
                 var id = event.target.id;
                 this.props.initCount(id);
-                this.initShow();
+                // this.initShow()
             }
             // this.props.setOnShow(id);
         }
@@ -24286,7 +24290,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\r\n    font-family: 'iconfont';  /* project id 638204 */\r\n    src: url('//at.alicdn.com/t/font_638204_hu9ww5yniyqtzkt9.eot');\r\n    src: url('//at.alicdn.com/t/font_638204_hu9ww5yniyqtzkt9.eot?#iefix') format('embedded-opentype'),\r\n    url('//at.alicdn.com/t/font_638204_hu9ww5yniyqtzkt9.woff') format('woff'),\r\n    url('//at.alicdn.com/t/font_638204_hu9ww5yniyqtzkt9.ttf') format('truetype'),\r\n    url('//at.alicdn.com/t/font_638204_hu9ww5yniyqtzkt9.svg#iconfont') format('svg');\r\n}\r\n\r\n.iconfont {\r\n    font-family: \"iconfont\" !important;\r\n    font-size: 40px !important;\r\n    font-style: normal;\r\n    -webkit-font-smoothing: antialiased;\r\n    -webkit-text-stroke-width: 0.2px;\r\n    -moz-osx-font-smoothing: grayscale;\r\n    pointer-events: none;\r\n}\r\n\r\n#footBar {\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 75px;\r\n    text-align: center;\r\n    background-color: #ffffff;\r\n}\r\n.stopPointer{\r\n    pointer-events: none;\r\n}\r\n#footBar span {\r\n    display: inline-block;\r\n    width: 33%;\r\n    height: 100%;\r\n    line-height:0.9;\r\n    padding-top: 6px;\r\n    color: #626262;\r\n    padding-bottom: 4px;\r\n}\r\n\r\n.selected i{\r\n    color: #00b9cc;\r\n}\r\n\r\n#footBar .selected span{\r\n    color: #00b9cc;\r\n}\r\n", ""]);
+exports.push([module.i, "@font-face{\n    font-family: 'iconfont';  /* project id 638204 */\n    src: url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.eot');\n    src: url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.eot?#iefix') format('embedded-opentype'),\n    url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.woff') format('woff'),\n    url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.ttf') format('truetype'),\n    url('//at.alicdn.com/t/font_638204_4gd6lxwuu5scq5mi.svg#iconfont') format('svg');\n}\n\n.iconfont {\n    font-family: \"iconfont\" !important;\n    font-size: 40px !important;\n    font-style: normal;\n    -webkit-font-smoothing: antialiased;\n    -webkit-text-stroke-width: 0.2px;\n    -moz-osx-font-smoothing: grayscale;\n    pointer-events: none;\n}\n\n#footBar {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n    height: 75px;\n    text-align: center;\n    background-color: #ffffff;\n}\n.stopPointer{\n    pointer-events: none;\n}\n#footBar span {\n    display: inline-block;\n    width: 33%;\n    height: 100%;\n    line-height:0.9;\n    padding-top: 6px;\n    color: #626262;\n    padding-bottom: 4px;\n}\n\n.selected i{\n    color: #00b9cc;\n}\n\n#footBar .selected span{\n    color: #00b9cc;\n}\n", ""]);
 
 // exports
 
@@ -24429,7 +24433,7 @@ var SearchBar = function (_Component) {
         key: 'setSrc',
         value: function setSrc(keyword, showPage, count, id) {
             var src = void 0;
-            console.log('keyword', keyword);
+            // console.log('keyword', keyword);
             switch (showPage) {
                 case 'book':
                     if (id !== '') {
@@ -24469,7 +24473,7 @@ var SearchBar = function (_Component) {
                 default:
                     break;
             }
-            console.log('src', src);
+            // console.log('src', src);
             return src;
         }
     }, {

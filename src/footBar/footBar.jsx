@@ -10,7 +10,7 @@ class FootBar extends Component {
         if(event.target.id!==this.props.showPage){
             let id=event.target.id;
             this.props.initCount(id);
-            this.initShow()
+            // this.initShow()
         }
         // this.props.setOnShow(id);
     }

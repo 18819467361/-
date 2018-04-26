@@ -17,9 +17,9 @@ class DetailPage extends Component {
         // console.log('mode',mode);
         switch (mode){
             case 'book':
-                console.log('in book');
+                // console.log('in book');
                 analyData.img=data.image?data.image:'';
-                console.log('img',analyData.img);
+                // console.log('img',analyData.img);
                 analyData.title=data.title?data.title:'';
                 if(data.author){
                     analyData.author=data.author.join(' ');
@@ -102,10 +102,10 @@ class DetailPage extends Component {
     render() {
         let mode = this.props.mode;
         let data = this.props.detailData;
-        console.log('mode', mode);
+        // console.log('mode', mode);
         let analyData=this.analysisData(data,mode);
-        console.log('data', data);
-        console.log('analyData',analyData);
+        // console.log('data', data);
+        // console.log('analyData',analyData);
         switch (mode){
             case 'book':
                 return (
