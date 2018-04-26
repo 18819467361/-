@@ -22881,7 +22881,8 @@ var App = function (_Component) {
             showPage: 'book',
             count: 10, //搜索条目
             detailId: '',
-            keyword: ''
+            keyword: '',
+            update: 'false'
         };
         return _this;
     }
@@ -22932,13 +22933,28 @@ var App = function (_Component) {
             console.log('setDetailId');
         }
     }, {
+        key: 'setUpdate',
+        value: function setUpdate() {
+            if (this.state.update === "true") {
+                this.setState({
+                    update: 'false',
+                    count: 10
+                });
+            } else {
+                this.setState({
+                    update: 'true',
+                    count: 10
+                });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
                 { className: 'app' },
-                _react2.default.createElement(_searchBar2.default, { setContents: this.setContents.bind(this), setKeyword: this.setKeyword.bind(this), keyword: this.state.keyword, setDetailId: this.setDetailId.bind(this), count: this.state.count, detailId: this.state.detailId, showPage: this.state.showPage }),
-                _react2.default.createElement(_contents2.default, { contents: this.state.contents, setDetailId: this.setDetailId.bind(this), detailId: this.state.detailId, count: this.state.count, setCount: this.setCount.bind(this), showPage: this.state.showPage }),
+                _react2.default.createElement(_searchBar2.default, { setContents: this.setContents.bind(this), setKeyword: this.setKeyword.bind(this), keyword: this.state.keyword, updata: this.state.update, setDetailId: this.setDetailId.bind(this), count: this.state.count, detailId: this.state.detailId, showPage: this.state.showPage }),
+                _react2.default.createElement(_contents2.default, { contents: this.state.contents, setDetailId: this.setDetailId.bind(this), setUpdate: this.setUpdate.bind(this), update: this.state.update, detailId: this.state.detailId, count: this.state.count, setCount: this.setCount.bind(this), showPage: this.state.showPage }),
                 _react2.default.createElement(_footBar2.default, { setOnShow: this.setOnShow.bind(this), initCount: this.initCount.bind(this), showPage: this.state.showPage })
             );
         }
@@ -23135,7 +23151,8 @@ var Contents = function (_Component) {
         _this.state = {
             preContents: {},
             preCount: 0,
-            lastLoadTime: 0
+            lastLoadTime: 0,
+            update: 'true'
         };
         return _this;
     }
@@ -23145,7 +23162,16 @@ var Contents = function (_Component) {
         value: function returnDetailId(value) {
             this.props.setDetailId(value);
         }
-
+    }, {
+        key: 'initShow',
+        value: function initShow(e) {
+            // console.log('fdf',window.scrollTo(100));
+            // console.log('initShow');
+            if (this.props.count === 10) {
+                window.scrollTo(0, 30);
+            }
+            // e.currentTarget.scrollTo(0,100)
+        }
         //页末加载更多
 
     }, {
@@ -23155,6 +23181,7 @@ var Contents = function (_Component) {
             var contentsHeight = e.currentTarget.scrollHeight;
             var scrollHeight = window.pageYOffset - 50;
             var windowHeight = window.innerHeight;
+            // console.log(scrollHeight,'scrollHE');
             var loadData = function loadData() {
                 var now = Date.now();
                 console.log('now', now);
@@ -23165,9 +23192,26 @@ var Contents = function (_Component) {
                     console.log('setCount');
                 }
             };
+            var update = function update() {
+                var now = Date.now();
+                // console.log('now', now);
+                // console.log('last', self.state.lastLoadTime);
+
+                // console.log("到顶了");
+                if (now - self.state.lastLoadTime > 2000) {
+                    self.state.lastLoadTime = now;
+                    setTimeout(function () {
+                        // console.log('稍后刷新');
+                        self.props.setUpdate();
+                    }, 1000);
+                    // console.log('setUpdate');
+                }
+            };
 
             if (contentsHeight - scrollHeight < windowHeight) {
                 loadData();
+            } else if (scrollHeight + 39 < 0) {
+                update();
             }
             // console.log('DOMTarget',e.currentTarget.scrollHeight);
             // console.log(e.nativeEvent);
@@ -23192,7 +23236,10 @@ var Contents = function (_Component) {
                     return _react2.default.createElement(_loading2.default, null);
                 }
             } else {
-                if (contents !== {} && contents !== this.state.preContents || this.state.preCount < count) {
+                // console.log(this.props.update);
+                // console.log(this.state.update);
+                if (contents !== {} && contents !== this.state.preContents || this.state.preCount < count || this.props.update !== this.state.update || this.state.keyword) {
+                    this.state.update = this.props.update;
                     this.state.preCount = count;
                     // console.log('contents', contents);
                     this.state.preContents = contents;
@@ -23201,7 +23248,12 @@ var Contents = function (_Component) {
                     // console.log('settimeout');
                     return _react2.default.createElement(
                         'div',
-                        { id: 'contents', onTouchMove: this.loadMore.bind(this) },
+                        { id: 'contents', onClick: this.initShow(), onTouchMove: this.loadMore.bind(this) },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'pullToUpdate' },
+                            '\u6B63\u5728\u5237\u65B0...'
+                        ),
                         datas.map(function (data, index) {
                             return _react2.default.createElement(_list2.default, { data: data, dataType: self.props.showPage,
                                 returnDetailId: _this2.returnDetailId.bind(_this2), key: index });
@@ -23264,7 +23316,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, "#contents{\r\n    width:100%;\r\n    margin-top: 15px;\r\n    overflow: auto;\r\n    position: relative;\r\n    height:100%;\r\n    margin-bottom: 63px;\r\n}\r\n\r\n.loadingBox{\r\n    position: relative;\r\n    width:100%;\r\n    height: 700px;\r\n}\r\n.loading{\r\n    width:200px;\r\n    height:200px;\r\n    display: block;\r\n    position: absolute;\r\n    top:40%;\r\n    left: 50%;\r\n    margin-left: -100px;\r\n    margin-top: -100px;\r\n    background: transparent url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524470917951&di=4d784e081fb0feffc5809acf743224d0&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2Fuploads%2F1506%2F1-150614203H20-L.jpg\") center center no-repeat;\r\n    -webkit-transform-style: preserve-3d;\r\n    -webkit-animation-name: y-spin;\r\n    -webkit-animation-duration: 2s;\r\n    -webkit-animation-iteration-count: infinite;\r\n    -webkit-animation-timing-function: linear;\r\n}\r\n\r\n.smallLoading{\r\n    margin:5px auto;\r\n    width:100px;\r\n    height:50px;\r\n    font-size: 20px;\r\n    color: #545454;\r\n    text-align: center;\r\n\r\n}\r\n\r\n@-webkit-keyframes y-spin {\r\n    0%{\r\n        -webkit-transform: rotate(0deg);\r\n    }\r\n    50%{\r\n        -webkit-transform: rotate(180deg);\r\n    }\r\n    100%{\r\n        -webkit-transform: rotate(360deg);\r\n    }\r\n}\r\n", ""]);
+exports.push([module.i, "#contents{\n    width:100%;\n    margin-top: 52px;\n    overflow: auto;\n    position: relative;\n    height:100%;\n    margin-bottom: 63px;\n    overflow: auto;\n    min-height:900px;\n}\n\n.loadingBox{\n    position: relative;\n    width:100%;\n    height: 700px;\n}\n.loading{\n    width:200px;\n    height:200px;\n    display: block;\n    position: absolute;\n    top:40%;\n    left: 50%;\n    margin-left: -100px;\n    margin-top: -100px;\n    background: transparent url(\"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524470917951&di=4d784e081fb0feffc5809acf743224d0&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2Fuploads%2F1506%2F1-150614203H20-L.jpg\") center center no-repeat;\n    -webkit-transform-style: preserve-3d;\n    -webkit-animation-name: y-spin;\n    -webkit-animation-duration: 2s;\n    -webkit-animation-iteration-count: infinite;\n    -webkit-animation-timing-function: linear;\n}\n\n.smallLoading{\n    margin:5px auto;\n    width:100px;\n    height:50px;\n    font-size: 20px;\n    color: #545454;\n    text-align: center;\n\n}\n\n@-webkit-keyframes y-spin {\n    0%{\n        -webkit-transform: rotate(0deg);\n    }\n    50%{\n        -webkit-transform: rotate(180deg);\n    }\n    100%{\n        -webkit-transform: rotate(360deg);\n    }\n}\n", ""]);
 
 // exports
 
@@ -24093,9 +24145,18 @@ var FootBar = function (_Component) {
     _createClass(FootBar, [{
         key: 'getOnShow',
         value: function getOnShow(event) {
-            var id = event.target.id;
-            this.props.initCount(id);
+            if (event.target.id !== this.props.showPage) {
+                var id = event.target.id;
+                this.props.initCount(id);
+                this.initShow();
+            }
             // this.props.setOnShow(id);
+        }
+    }, {
+        key: 'initShow',
+        value: function initShow(e) {
+            console.log('foot init');
+            window.scrollTo(0, 30);
         }
     }, {
         key: 'highLight',
@@ -24438,10 +24499,11 @@ var SearchBar = function (_Component) {
 
             var id = this.props.detailId;
             var keyword = this.props.keyword;
+            var update = this.props.update;
             var placeHolder = this.setPlaceHolder();
-            if (this.state.init !== this.props.showPage + this.props.count + id + keyword) {
+            if (this.state.init !== this.props.showPage + this.props.count + id + keyword + update) {
                 this.onSearch.apply(this);
-                this.state.init = this.props.showPage + this.props.count + id + keyword;
+                this.state.init = this.props.showPage + this.props.count + id + keyword + update;
             }
             if (id !== '') {
                 return _react2.default.createElement(
@@ -24452,20 +24514,24 @@ var SearchBar = function (_Component) {
             } else {
                 return _react2.default.createElement(
                     'div',
-                    { id: 'searchBar' },
+                    { className: 'searchBarContain' },
                     _react2.default.createElement(
-                        'i',
-                        { className: 'searchBar-iconfont', id: 'glass' },
-                        '\uE6D0'
-                    ),
-                    _react2.default.createElement('input', { type: 'search', ref: function ref(input) {
-                            return _this2.input = input;
-                        },
-                        placeholder: this.state.preKeyword || placeHolder }),
-                    _react2.default.createElement(
-                        'a',
-                        { onClick: this.onSearch.bind(this) },
-                        '\u641C\u7D22'
+                        'div',
+                        { id: 'searchBar' },
+                        _react2.default.createElement(
+                            'i',
+                            { className: 'searchBar-iconfont', id: 'glass' },
+                            '\uE6D0'
+                        ),
+                        _react2.default.createElement('input', { type: 'search', ref: function ref(input) {
+                                return _this2.input = input;
+                            },
+                            placeholder: this.state.preKeyword || placeHolder }),
+                        _react2.default.createElement(
+                            'a',
+                            { onClick: this.onSearch.bind(this) },
+                            '\u641C\u7D22'
+                        )
                     )
                 );
             }
@@ -24524,7 +24590,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\n    font-family: 'iconfont';  /* project id 589614 */\n    src: url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.eot');\n    src: url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.eot?#iefix') format('embedded-opentype'),\n    url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.woff') format('woff'),\n    url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.ttf') format('truetype'),\n    url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.svg#iconfont') format('svg');\n}\n\n.searchBar-iconfont{\n    font-family:\"iconfont\" !important;\n    font-size:25px;font-style:normal;\n    -webkit-font-smoothing: antialiased;\n    -webkit-text-stroke-width: 0.2px;\n    -moz-osx-font-smoothing: grayscale;\nline-height: 38px}\n\n#searchBar{\n    box-sizing: border-box;\n    width: 100%;\n    height:40px;\n    margin:8px auto;\n    border:1px solid #ababab;\n    line-height: 38px;\n    vertical-align: middle;\n}\n\na{\n   float: right;\n    width:80px;\n    height:38px;\n    line-height: 38px;\n    font-size: 20px;\n    background-color: #00b9cc;\n    color: #fff;\n    text-align: center;\n    letter-spacing: 6px;\n}\n\n\ninput{\n    border: none;\n    height:37px;\n    width: 220px;\n    vertical-align: top;\n    font:20px 宋体,sans-serif;\n    outline: none;\n    padding-top: 2px;\n}\n\ni{\n    margin:0 5px;\n    color: #7d7d7d;\n}\n", ""]);
+exports.push([module.i, "@font-face {\n    font-family: 'iconfont';  /* project id 589614 */\n    src: url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.eot');\n    src: url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.eot?#iefix') format('embedded-opentype'),\n    url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.woff') format('woff'),\n    url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.ttf') format('truetype'),\n    url('//at.alicdn.com/t/font_589614_99q59wx4mc34ygb9.svg#iconfont') format('svg');\n}\n\n.searchBar-iconfont{\n    font-family:\"iconfont\" !important;\n    font-size:25px;font-style:normal;\n    -webkit-font-smoothing: antialiased;\n    -webkit-text-stroke-width: 0.2px;\n    -moz-osx-font-smoothing: grayscale;\nline-height: 38px}\n.searchBarContain{\n    position: fixed;\n    width:100%;\n   background-color: #ffffff;\n    height: 56px;\n    padding-bottom: 2px;\n    left:0;\n    top:0;\n    z-index:1;\n}\n#searchBar{\n\n\n    box-sizing: border-box;\n    width: 95%;\n    height:40px;\n    margin:8px auto;\n    border:1px solid #ababab;\n    line-height: 38px;\n    vertical-align: middle;\n    background-color: white;\n\n}\n\na{\n   float: right;\n    width:80px;\n    height:38px;\n    line-height: 38px;\n    font-size: 20px;\n    background-color: #00b9cc;\n    color: #fff;\n    text-align: center;\n    letter-spacing: 6px;\n}\n\n\ninput{\n    border: none;\n    height:37px;\n    width: 220px;\n    vertical-align: top;\n    font:20px 宋体,sans-serif;\n    outline: none;\n    padding-top: 2px;\n}\n\ni{\n    margin:0 5px;\n    color: #7d7d7d;\n}\n.pullToUpdate{\n    width:100%;\n    height:30px;\n    line-height: 30px;\n    text-align: center;\n\n}\n", ""]);
 
 // exports
 
