@@ -12,9 +12,12 @@ class App extends Component {
             showPage:'book',
             count:10,//搜索条目
             detailId:'',
-            keyword:''
+            keyword:'',
+            update:'false'
         }
     }
+
+
 
     setContents(value){
         this.setState({
@@ -55,13 +58,27 @@ class App extends Component {
         console.log('setDetailId');
     }
 
+    setUpdate(){
+        if(this.state.update==="true"){
+            this.setState({
+                update:'false',
+                count:10
+            })
+        }else{
+            this.setState({
+                update:'true',
+                count:10
+            })
+        }
+
+    }
 
     render() {
         return (
 	        <div className="app">
-                <SearchBar setContents={this.setContents.bind(this)} setKeyword={this.setKeyword.bind(this)} keyword={this.state.keyword} setDetailId={this.setDetailId.bind(this)} count={this.state.count} detailId={this.state.detailId}  showPage={this.state.showPage}/>
+                <SearchBar setContents={this.setContents.bind(this)} setKeyword={this.setKeyword.bind(this)} keyword={this.state.keyword} updata={this.state.update} setDetailId={this.setDetailId.bind(this)} count={this.state.count} detailId={this.state.detailId}  showPage={this.state.showPage}/>
 
-                <Contents contents={this.state.contents} setDetailId={this.setDetailId.bind(this)} detailId={this.state.detailId} count={this.state.count} setCount={this.setCount.bind(this)} showPage={this.state.showPage} />
+                <Contents contents={this.state.contents} setDetailId={this.setDetailId.bind(this)} setUpdate={this.setUpdate.bind(this)} update={this.state.update} detailId={this.state.detailId} count={this.state.count} setCount={this.setCount.bind(this)} showPage={this.state.showPage} />
 
                 <FootBar setOnShow={this.setOnShow.bind(this)} initCount={this.initCount.bind(this)} showPage={this.state.showPage}/>
 	        </div>

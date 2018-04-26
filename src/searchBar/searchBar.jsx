@@ -162,10 +162,11 @@ class SearchBar extends Component {
     render() {
         let id = this.props.detailId;
         let keyword=this.props.keyword;
+        let update=this.props.update;
         let placeHolder = this.setPlaceHolder();
-        if (this.state.init !== this.props.showPage + this.props.count + id + keyword) {
+        if (this.state.init !== this.props.showPage + this.props.count + id + keyword+update) {
             this.onSearch.apply(this);
-            this.state.init = this.props.showPage + this.props.count + id + keyword;
+            this.state.init = this.props.showPage + this.props.count + id + keyword+update;
         }
         if (id !== '') {
             return (
@@ -177,11 +178,13 @@ class SearchBar extends Component {
             )
         } else {
             return (
-                <div id='searchBar'>
-                    <i className='searchBar-iconfont' id='glass'>&#xe6d0;</i>
-                    <input type='search'   ref={(input) => this.input = input}
-                           placeholder={this.state.preKeyword || placeHolder}/>
-                    <a onClick={this.onSearch.bind(this)}>搜索</a>
+                <div className='searchBarContain'>
+                    <div id='searchBar'>
+                        <i className='searchBar-iconfont' id='glass'>&#xe6d0;</i>
+                        <input type='search'   ref={(input) => this.input = input}
+                               placeholder={this.state.preKeyword || placeHolder}/>
+                        <a onClick={this.onSearch.bind(this)}>搜索</a>
+                    </div>
                 </div>
             )
         }

@@ -7,11 +7,18 @@ class FootBar extends Component {
     }
 
     getOnShow(event) {
-        let id=event.target.id;
-        this.props.initCount(id);
+        if(event.target.id!==this.props.showPage){
+            let id=event.target.id;
+            this.props.initCount(id);
+            this.initShow()
+        }
         // this.props.setOnShow(id);
     }
+    initShow(e){
+            console.log('foot init');
+            window.scrollTo(0,30);
 
+    }
     highLight(){
         let showPage=this.props.showPage;
         let highLight={
