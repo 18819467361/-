@@ -11,7 +11,7 @@ class TopBar extends Component {
         }
     }
     render() {
-        const showType=thi.prop.showType;
+        const showType=this.props.showType;
         if(showType==='book'||showType==='music'||showType==='movie'){
             return (
                 <SearchBar setContents={this.props.setContents.bind(this)} setKeyword={this.props.setKeyword.bind(this)} keyword={this.props.keyword} count={this.props.count} showType={this.props.showType} id={this.props.id}/>

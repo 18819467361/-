@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import './SearchBar.css';
-
+import fetchJsonp from 'fetch-jsonp'
 
 class SearchBar extends Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            flag:''
+        }
     }
 //请求数据
     search() {
@@ -15,9 +17,10 @@ class SearchBar extends Component {
 
 //根据keyword,showType,count,id设置请求数据的src
     setSrc() {
-        const showType = this.props.showPage
+        const showType = this.props.showType
+        console.log('showType',showType);
         const count = this.props.count
-        const id = this.props.detailId
+        const id = this.props.id
         const keyword = this.props.keyword
         let src
         // console.log('keyword', keyword);
@@ -100,12 +103,18 @@ class SearchBar extends Component {
             .then(function (response) {
                 return response.json()
             }).then(function (json) {
+            console.log('json原始数据',json);
             self.props.setContents(json)
         }).catch(function (ex) {
             console.log('parsing failed', ex)
         })
     }
     render() {
+        console.log('SearchBarflaf',this.props.id,this.props.showType,this.props.count,this.props.keyword);
+        if(this.state.flag!==this.props.id+this.props.showType+this.props.count+this.props.keyword){
+            this.state.flag=this.props.id+this.props.showType+this.props.count+this.props.keyword;
+            this.search();
+        }
         const placeHolder = this.setPlaceHolder()
         return (
             <div className='searchBarContain'>
@@ -119,11 +128,13 @@ class SearchBar extends Component {
         );
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.search();
+    componentWillUpdate() {
+        // this.search();
     }
 
     componentDidMount() {
+        // this.search();
+        // console.log('DidMount_search');
         const input = this.input
         input.focus()
     }

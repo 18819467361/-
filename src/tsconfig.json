@@ -17,7 +17,7 @@
             ],
             "alt_title": "",
             "image": "https://img1.doubanio.com\/view\/subject\/s\/public\/s29599018.jpg",
-            "tags": [
+            "tag": [
                 {
                     "count": 2502,
                     "name": "李宇春"
@@ -96,7 +96,7 @@
             ],
             "alt_title": "PopHolic",
             "image": "https://img3.doubanio.com\/view\/subject\/s\/public\/s6027720.jpg",
-            "tags": [
+            "tag": [
                 {
                     "count": 6,
                     "name": "流行骇客"
@@ -162,7 +162,7 @@
             },
             "alt_title": "",
             "image": "https://img3.doubanio.com\/f\/music\/11496305e2cd99415ec541326b236b6b8d61175c\/pics\/music\/default_cover\/lpic\/music-default.gif",
-            "tags": [
+            "tag": [
                 {
                     "count": 1,
                     "name": "你不要走"
@@ -201,7 +201,7 @@
             },
             "alt_title": "",
             "image": "https://img3.doubanio.com\/f\/music\/11496305e2cd99415ec541326b236b6b8d61175c\/pics\/music\/default_cover\/lpic\/music-default.gif",
-            "tags": [
+            "tag": [
                 {
                     "count": 1,
                     "name": "怀旧"
@@ -237,7 +237,7 @@
             ],
             "alt_title": "",
             "image": "https://img3.doubanio.com\/f\/music\/11496305e2cd99415ec541326b236b6b8d61175c\/pics\/music\/default_cover\/lpic\/music-default.gif",
-            "tags": [],
+            "tag": [],
             "mobile_link": "https:\/\/m.douban.com\/music\/subject\/10505092\/",
             "attrs": {
                 "publisher": [
@@ -274,7 +274,7 @@
             ],
             "alt_title": "",
             "image": "https://img3.doubanio.com\/f\/music\/11496305e2cd99415ec541326b236b6b8d61175c\/pics\/music\/default_cover\/lpic\/music-default.gif",
-            "tags": [],
+            "tag": [],
             "mobile_link": "https:\/\/m.douban.com\/music\/subject\/2163509\/",
             "attrs": {
                 "media": [
@@ -311,7 +311,7 @@
             ],
             "alt_title": "",
             "image": "https://img3.doubanio.com\/view\/subject\/s\/public\/s2766860.jpg",
-            "tags": [
+            "tag": [
                 {
                     "count": 105,
                     "name": "BritneySpears"
@@ -394,7 +394,7 @@
             ],
             "alt_title": "",
             "image": "https://img3.doubanio.com\/view\/subject\/s\/public\/s2862701.jpg",
-            "tags": [
+            "tag": [
                 {
                     "count": 36,
                     "name": "罗大佑"
@@ -474,7 +474,7 @@
             ],
             "alt_title": "",
             "image": "https://img3.doubanio.com\/view\/subject\/s\/public\/s26172424.jpg",
-            "tags": [
+            "tag": [
                 {
                     "count": 28,
                     "name": "MastaMic"
@@ -553,7 +553,7 @@
             ],
             "alt_title": "",
             "image": "https://img3.doubanio.com\/view\/subject\/s\/public\/s1419725.jpg",
-            "tags": [
+            "tag": [
                 {
                     "count": 16,
                     "name": "郑怡"

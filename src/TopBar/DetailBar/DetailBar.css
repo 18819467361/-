@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 638204 */
+    src: url('//at.alicdn.com/t/font_638204_hpiuttmqgh5v1jor.eot');
+    src: url('//at.alicdn.com/t/font_638204_hpiuttmqgh5v1jor.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_638204_hpiuttmqgh5v1jor.woff') format('woff'),
+    url('//at.alicdn.com/t/font_638204_hpiuttmqgh5v1jor.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_638204_hpiuttmqgh5v1jor.svg#iconfont') format('svg');
+}
+
+.detail-iconfont {
+    font-family: "iconfont" !important;
+    font-size: 25px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+}
+
+.returnBar{
+    width: 100%;
+    height:40px;
+    margin:8px 0;
+    background-color: #00b9cc;
+}
+
+.returnButton{
+    width:20%;
+    border-right: 1px solid #ffffff;
+    text-align: center;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.title{
+    width:78%;
+    float: right;
+    text-align: center;
+    line-height: 40px;
+    height:40px;
+    font-size: 20px;
+    font-family: "Microsoft JhengHei UI Light",sans-serif;
+
+}
+
+.title p{
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: "Microsoft JhengHei UI Light",sans-serif;
+    margin: 0;
+    color: #fff;
+}
