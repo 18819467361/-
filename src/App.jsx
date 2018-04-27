@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import './style.css';
-import Contents from './contents/contents';
-import FootBar from  './footBar/footBar';
-import SearchBar from './searchBar/searchBar';
+import Content from './Content/content';
+import NavBar from  './NavBar/NavBar';
+import TopBar from './TopBar/TopBar';
 
 class App extends Component {
     constructor(){
         super();
         this.state={
             contents:{},
-            showPage:'book',
+            showType:'book',
             count:10,//搜索条目
-            detailId:'',
+            id:'',
             keyword:'',
-            update:'false'
         }
     }
 
@@ -32,55 +31,40 @@ class App extends Component {
     }
 
     setKeyword(value){
-        this.state.keyword=value;
+        this.setState({
+            keyword:value
+        })
     }
 
     initCount(value){
         this.setState({
             count:10,
-            detailId:'',
-            showPage:value
+            id:'',
+            showType:value
         })
     }
 
-    setOnShow(value){
-        // console.log('insetOnShow');
+    setShowType(value){
         this.setState({
-            showPage:value
+            showType:value
         });
-        // console.log('showPage',this.state.showPage);
     }
 
-    setDetailId(value){
+    setId(value){
         this.setState({
-            detailId:value
+            id:value
         });
-        // console.log('setDetailId');
-    }
-
-    setUpdate(){
-        if(this.state.update==="true"){
-            this.setState({
-                update:'false',
-                count:10
-            })
-        }else{
-            this.setState({
-                update:'true',
-                count:10
-            })
-        }
 
     }
 
     render() {
         return (
 	        <div className="app">
-                <SearchBar setContents={this.setContents.bind(this)} setKeyword={this.setKeyword.bind(this)} keyword={this.state.keyword} updata={this.state.update} setDetailId={this.setDetailId.bind(this)} count={this.state.count} detailId={this.state.detailId}  showPage={this.state.showPage}/>
+                <TopBar setContents={this.setContents.bind(this)} setKeyword={this.setKeyword.bind(this)} keyword={this.state.keyword} setId={this.setId.bind(this)} count={this.state.count} id={this.state.id} showType={this.state.showType}/>
 
-                <Contents contents={this.state.contents} setDetailId={this.setDetailId.bind(this)} setUpdate={this.setUpdate.bind(this)} update={this.state.update} detailId={this.state.detailId} count={this.state.count} setCount={this.setCount.bind(this)} showPage={this.state.showPage} />
+                <Content setId={this.setId.bind(this)} setCount={this.setCount.bind(this)} count={this.state.count}  contents={this.state.contents} showType={this.state.showType} />
 
-                <FootBar setOnShow={this.setOnShow.bind(this)} initCount={this.initCount.bind(this)} showPage={this.state.showPage}/>
+                <NavBar setShowType={this.setShowType.bind(this)} initCount={this.initCount.bind(this)} showType={this.state.showType}/>
 	        </div>
         );
     }
