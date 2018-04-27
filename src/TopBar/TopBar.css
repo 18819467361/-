@@ -24,7 +24,7 @@
     top:0;
     z-index:1;
 }
-#searchBar{
+.searchBar{
 
 
     box-sizing: border-box;
@@ -71,4 +71,7 @@ i{
     line-height: 30px;
     text-align: center;
 
+}
+.hideBar{
+    display: none;
 }

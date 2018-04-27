@@ -66,7 +66,7 @@ class ListPage extends Component {
                     )
                 })}
                 <div className={'smallLoading_content'} >
-                    上拉加载更多
+                    上拉加载更多...
                 </div>
             </div>
         );

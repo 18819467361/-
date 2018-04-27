@@ -18,7 +18,10 @@ class TopBar extends Component {
             );
         }else{
             return(
-                <DetailBar setShowType={this.props.setShowType.bind(this)}/>
+                <div>
+                    <SearchBar setContents={this.props.setContents.bind(this)} setKeyword={this.props.setKeyword.bind(this)} keyword={this.props.keyword} count={this.props.count} showType={this.props.showType} id={this.props.id}/>
+                    <DetailBar setShowType={this.props.setShowType.bind(this)} showType={this.props.showType}/>
+                </div>
             )
         }
 

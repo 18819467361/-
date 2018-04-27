@@ -115,10 +115,15 @@ class SearchBar extends Component {
             this.state.flag=this.props.id+this.props.showType+this.props.count+this.props.keyword;
             this.search();
         }
+        let containerClassName='searchBarContain';
+        const testWord=/Detail/;
+        if(testWord.test(this.props.showType)){
+            containerClassName='hideBar'
+        }
         const placeHolder = this.setPlaceHolder()
         return (
-            <div className='searchBarContain'>
-                <div id='searchBar'>
+            <div className={containerClassName}>
+                <div className='searchBar'>
                     <i className='searchBar-iconfont' id='glass'>&#xe6d0;</i>
                     <input type='search' ref={(input) => this.input = input}
                            placeholder={placeHolder}/>
