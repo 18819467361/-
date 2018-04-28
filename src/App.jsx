@@ -28,12 +28,14 @@ class App extends Component {
         this.setState({
             count:this.state.count+value
         })
+        console.log('had setCound');
     }
 
     setKeyword(value){
         this.setState({
             keyword:value
         })
+        console.log('had set keyword');
     }
 
     initCount(value){

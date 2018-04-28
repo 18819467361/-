@@ -36,8 +36,8 @@ class List extends Component {
                 analyData.id = datas.id ? datas.id : ''
                 break
             case 'movie':
-                console.log('inmovie');
-                console.log('datas',datas);
+                // console.log('inmovie');
+                // console.log('datas',datas);
                 analyData.spanName = 'movie-span'
                 analyData.authorLab = '导演'
                 analyData.title = datas.title ? datas.title : ''
@@ -49,7 +49,7 @@ class List extends Component {
                     analyData.tag[0] = '暂无'
                 }
                 // console.log('directors',datas.directors);
-                console.log('datas',datas);
+                // console.log('datas',datas);
                 if (datas.directors[0]) {
                     analyData.author = datas.directors[0].name ? datas.directors[0].name : ''
                 } else {

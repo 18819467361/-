@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './DetailBar.css';
-
+// import Tool from '../../api';
 
 class DetailBar extends Component {
     constructor(){
@@ -23,6 +23,8 @@ class DetailBar extends Component {
             </div>
         );
     }
+
+
 }
 
 module.exports = DetailBar;

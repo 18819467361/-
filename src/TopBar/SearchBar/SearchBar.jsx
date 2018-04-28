@@ -6,9 +6,12 @@ class SearchBar extends Component {
     constructor() {
         super();
         this.state = {
-            flag:''
+            flag:'',
+            preCount:10,
+            hadDidMount:false
         }
     }
+
 //请求数据
     search() {
         const src = this.setSrc()
@@ -18,12 +21,10 @@ class SearchBar extends Component {
 //根据keyword,showType,count,id设置请求数据的src
     setSrc() {
         const showType = this.props.showType
-        console.log('showType',showType);
         const count = this.props.count
         const id = this.props.id
         const keyword = this.props.keyword
         let src
-        // console.log('keyword', keyword);
         switch (showType) {
             case 'book':
                 if (keyword === '') {
@@ -60,7 +61,6 @@ class SearchBar extends Component {
             default:
                 break
         }
-        // console.log('src', src);
         return src
     }
 
@@ -109,12 +109,9 @@ class SearchBar extends Component {
             console.log('parsing failed', ex)
         })
     }
+
     render() {
-        console.log('SearchBarflaf',this.props.id,this.props.showType,this.props.count,this.props.keyword);
-        if(this.state.flag!==this.props.id+this.props.showType+this.props.count+this.props.keyword){
-            this.state.flag=this.props.id+this.props.showType+this.props.count+this.props.keyword;
-            this.search();
-        }
+        console.log('render');
         let containerClassName='searchBarContain';
         const testWord=/Detail/;
         if(testWord.test(this.props.showType)){
@@ -132,16 +129,30 @@ class SearchBar extends Component {
             </div>
         );
     }
-
-    componentWillUpdate() {
-        // this.search();
+    componentWillMount(){
+        console.log('willMount');
     }
-
     componentDidMount() {
-        // this.search();
-        // console.log('DidMount_search');
+        this.state.hadDidMount=true
+        this.search();
         const input = this.input
         input.focus()
+    }
+    componentWillUpdate(){
+        console.log('willupdate');
+
+    }
+    componentDidUpdate(){
+        console.log('didUpdate');
+        if(this.state.hadDidMount!==true){
+            let showType=this.props.showType.match(/book|music|movie/);
+            if(this.state.preCount!==this.props.count+this.props.keyword+showType[0]){
+                this.state.preCount=this.props.count+this.props.keyword+showType[0];
+                this.search();
+            }
+        }else{
+            this.state.hadDidMount=false;
+        }
     }
 }
 
