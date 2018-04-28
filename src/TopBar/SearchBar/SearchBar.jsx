@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './SearchBar.css';
 import fetchJsonp from 'fetch-jsonp'
-
+import Tool from '../../api'
 class SearchBar extends Component {
     constructor() {
         super();
@@ -13,9 +13,10 @@ class SearchBar extends Component {
     }
 
 //请求数据
-    search() {
+    fetchData() {
         const src = this.setSrc()
-        this.getData(src)
+        let content=this.getData(src)
+        console.log(content,'content');
     }
 
 //根据keyword,showType,count,id设置请求数据的src
@@ -129,26 +130,24 @@ class SearchBar extends Component {
             </div>
         );
     }
-    componentWillMount(){
-        console.log('willMount');
-    }
+    //挂载后抓取数据
     componentDidMount() {
         this.state.hadDidMount=true
-        this.search();
+        // this.fetchData();
+        Tool.fetchData(this.props.showType,this.props.count,this.props.id,this.props.keyword,this.props.setContents.bind(this))
         const input = this.input
         input.focus()
     }
-    componentWillUpdate(){
-        console.log('willupdate');
-
-    }
+    //组件重新渲染后抓取数据
     componentDidUpdate(){
         console.log('didUpdate');
         if(this.state.hadDidMount!==true){
             let showType=this.props.showType.match(/book|music|movie/);
             if(this.state.preCount!==this.props.count+this.props.keyword+showType[0]){
                 this.state.preCount=this.props.count+this.props.keyword+showType[0];
-                this.search();
+                // this.fetchData();
+                Tool.fetchData(this.props.showType,this.props.count,this.props.id,this.props.keyword,this.props.setContents.bind(this))
+
             }
         }else{
             this.state.hadDidMount=false;

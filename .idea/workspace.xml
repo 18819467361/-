@@ -40,9 +40,15 @@
             <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/api.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="324">
-                    <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-                    <folding />
+                  <state relative-caret-position="270">
+                    <caret line="78" column="2" lean-forward="true" selection-start-line="78" selection-start-column="2" selection-end-line="78" selection-end-column="2" />
+                    <folding>
+                      <element signature="e#163#1892#0" expanded="false" />
+                      <element signature="e#1929#2244#0" expanded="false" />
+                      <element signature="e#2304#2404#0" expanded="false" />
+                      <element signature="e#2440#2629#0" expanded="false" />
+                      <element signature="e#2664#2877#0" expanded="false" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -89,8 +95,8 @@
       <file leaf-file-name="content.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Content/content.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <state relative-caret-position="315">
+              <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#791#1956#0" expanded="false" />
@@ -100,36 +106,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListPage.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ListPage.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Content/ListPage/ListPage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1008">
-              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+            <state relative-caret-position="18">
+              <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#!!block;n#initShow#0;n#ListPage#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchBar.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchBar.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TopBar/SearchBar/SearchBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+            <state relative-caret-position="54">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="36" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="n#!!block;n#search#0;n#SearchBar#0" expanded="false" />
                 <element signature="n#!!block;n#setSrc#0;n#SearchBar#0" expanded="false" />
-                <element signature="e#621#2299#0" expanded="false" />
                 <element signature="n#!!block;n#setPlaceHolder#0;n#SearchBar#0" expanded="false" />
                 <element signature="n#!!block;n#returnKeyword#0;n#SearchBar#0" expanded="false" />
-                <element signature="n#!!block;n#getData#0;n#SearchBar#0" expanded="false" />
                 <element signature="n#!!block;n#render#0;n#SearchBar#0" expanded="false" />
-                <element signature="n#!!block;n#componentWillMount#0;n#SearchBar#0" expanded="false" />
-                <element signature="n#!!block;n#componentDidMount#0;n#SearchBar#0" expanded="false" />
-                <element signature="n#!!block;n#componentWillUpdate#0;n#SearchBar#0" expanded="false" />
-                <element signature="n#!!block;n#componentDidUpdate#0;n#SearchBar#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -138,8 +137,8 @@
       <file leaf-file-name="List.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Content/ListPage/List/List.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+            <state relative-caret-position="220">
+              <caret line="97" column="4" lean-forward="false" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -172,7 +171,7 @@
       <file leaf-file-name="TopBar.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TopBar/TopBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-387">
+            <state relative-caret-position="-366">
               <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding />
             </state>
@@ -221,14 +220,14 @@
         <option value="$PROJECT_DIR$/src/Content/MovieDetail/MovieDetail.jsx" />
         <option value="$PROJECT_DIR$/src/TopBar/TopBar.css" />
         <option value="$PROJECT_DIR$/src/NavBar/NavBar.css" />
-        <option value="$PROJECT_DIR$/src/Content/ListPage/ListPage.jsx" />
-        <option value="$PROJECT_DIR$/src/api.js" />
         <option value="$PROJECT_DIR$/src/TopBar/DetailBar/DetailBar.jsx" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/Content/ListPage/List/List.jsx" />
         <option value="$PROJECT_DIR$/src/TopBar/TopBar.jsx" />
-        <option value="$PROJECT_DIR$/src/Content/content.jsx" />
         <option value="$PROJECT_DIR$/src/TopBar/SearchBar/SearchBar.jsx" />
+        <option value="$PROJECT_DIR$/src/Content/content.jsx" />
+        <option value="$PROJECT_DIR$/src/api.js" />
+        <option value="$PROJECT_DIR$/src/Content/ListPage/ListPage.jsx" />
       </list>
     </option>
   </component>
@@ -355,12 +354,12 @@
       <workItem from="1524675002172" duration="2533000" />
       <workItem from="1524811477150" duration="716000" />
       <workItem from="1524812205788" duration="27768000" />
-      <workItem from="1524882327441" duration="15144000" />
+      <workItem from="1524882327441" duration="19137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46161000" />
+    <option name="totallyTimeSpent" value="50154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,9 +372,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3349929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3349929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872927" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -405,7 +403,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -442,6 +440,7 @@
           <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#initShow#0;n#ListPage#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -463,18 +462,10 @@
         <state relative-caret-position="756">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="n#!!block;n#search#0;n#SearchBar#0" expanded="false" />
             <element signature="n#!!block;n#setSrc#0;n#SearchBar#0" expanded="false" />
-            <element signature="e#621#2299#0" expanded="false" />
             <element signature="n#!!block;n#setPlaceHolder#0;n#SearchBar#0" expanded="false" />
             <element signature="n#!!block;n#returnKeyword#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#getData#0;n#SearchBar#0" expanded="false" />
             <element signature="n#!!block;n#render#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillMount#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillUpdate#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidUpdate#0;n#SearchBar#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -509,7 +500,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#163#1892#0" expanded="false" />
+            <element signature="e#1929#2244#0" expanded="false" />
+            <element signature="e#2304#2404#0" expanded="false" />
+            <element signature="e#2440#2629#0" expanded="false" />
+            <element signature="e#2664#2877#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -740,14 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TopBar/TopBar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NavBar/NavBar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1161">
@@ -764,14 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TopBar/DetailBar/DetailBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-36">
@@ -782,21 +763,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Content/ListPage/List/List.jsx">
+    <entry file="file://$PROJECT_DIR$/src/TopBar/TopBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="-366">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TopBar/TopBar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TopBar/SearchBar/SearchBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="36" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#setSrc#0;n#SearchBar#0" expanded="false" />
+            <element signature="n#!!block;n#setPlaceHolder#0;n#SearchBar#0" expanded="false" />
+            <element signature="n#!!block;n#returnKeyword#0;n#SearchBar#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#SearchBar#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TopBar/TopBar.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Content/ListPage/List/List.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="97" column="4" lean-forward="false" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -810,20 +812,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Content/ListPage/ListPage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1008">
-          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Content/content.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+        <state relative-caret-position="315">
+          <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="e#791#1956#0" expanded="false" />
@@ -832,23 +824,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TopBar/SearchBar/SearchBar.jsx">
+    <entry file="file://$PROJECT_DIR$/src/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+        <state relative-caret-position="270">
+          <caret line="78" column="2" lean-forward="true" selection-start-line="78" selection-start-column="2" selection-end-line="78" selection-end-column="2" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="n#!!block;n#search#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#setSrc#0;n#SearchBar#0" expanded="false" />
-            <element signature="e#621#2299#0" expanded="false" />
-            <element signature="n#!!block;n#setPlaceHolder#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#returnKeyword#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#getData#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillMount#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillUpdate#0;n#SearchBar#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidUpdate#0;n#SearchBar#0" expanded="false" />
+            <element signature="e#163#1892#0" expanded="false" />
+            <element signature="e#1929#2244#0" expanded="false" />
+            <element signature="e#2304#2404#0" expanded="false" />
+            <element signature="e#2440#2629#0" expanded="false" />
+            <element signature="e#2664#2877#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Content/ListPage/ListPage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="25" column="9" lean-forward="false" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#initShow#0;n#ListPage#0" expanded="false" />
           </folding>
         </state>
       </provider>

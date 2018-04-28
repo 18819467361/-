@@ -56,18 +56,6 @@ class Contents extends Component {
             )
         }
     }
-    componentWillMount(){
-        console.log('内容willMount');
-    }
-    componentDidMount() {
-        console.log('内容dit mount');
-    }
-    componentWillUpdate(){
-        console.log('内容willupdate');
-    }
-    componentDidUpdate(){
-        console.log('内容didUpdate');
-    }
 }
 
 module.exports = Contents;
