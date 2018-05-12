@@ -8,20 +8,12 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      contents: {},
       showType: 'book',
       count: 10, // 搜索条目
       id: '',
       keyword: '',
       reLoad: true
     }
-  }
-
-  setContents (value) {
-    // this.state.contents=value;
-    this.setState({
-      contents: value
-    })
   }
 
   setCount (value) {
@@ -71,9 +63,9 @@ class App extends Component {
   render () {
     return (
       <div className='app'>
-        <TopBar setShowType={this.setShowType.bind(this)} setContents={this.setContents.bind(this)} setKeyword={this.setKeyword.bind(this)} keyword={this.state.keyword} setId={this.setId.bind(this)} count={this.state.count} id={this.state.id} showType={this.state.showType} />
+        <TopBar setShowType={this.setShowType.bind(this)} setKeyword={this.setKeyword.bind(this)} keyword={this.state.keyword} setId={this.setId.bind(this)} count={this.state.count} id={this.state.id} showType={this.state.showType} />
 
-        <Content setReLoad={this.setReLoad.bind(this)} setIdANDShowType={this.setIdANDShowType.bind(this)} setId={this.setId.bind(this)} setCount={this.setCount.bind(this)} count={this.state.count} contents={this.state.contents} showType={this.state.showType} keyword={this.state.keyword} reLoad={this.state.reLoad} />
+        <Content setReLoad={this.setReLoad.bind(this)} setIdANDShowType={this.setIdANDShowType.bind(this)} setId={this.setId.bind(this)} setCount={this.setCount.bind(this)} count={this.state.count} contents={this.state.contents} showType={this.state.showType} id={this.state.id} keyword={this.state.keyword} reLoad={this.state.reLoad} />
 
         <NavBar setShowType={this.setShowType.bind(this)} initCount={this.initCount.bind(this)} showType={this.state.showType} />
       </div>

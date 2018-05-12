@@ -21,12 +21,12 @@ class TopBar extends Component {
     const showType = this.props.showType
     if (showType === 'book' || showType === 'music' || showType === 'movie') {
       return (
-        <SearchBar setContents={this.props.setContents.bind(this)} setKeyword={this.props.setKeyword.bind(this)} keyword={this.props.keyword} count={this.props.count} showType={this.props.showType} id={this.props.id} />
+        <SearchBar setKeyword={this.props.setKeyword.bind(this)} keyword={this.props.keyword} count={this.props.count} showType={this.props.showType} id={this.props.id} />
       )
     } else {
       return (
         <div onClick={this.changetest.bind(this)}>
-          <SearchBar setContents={this.props.setContents.bind(this)} setKeyword={this.props.setKeyword.bind(this)} keyword={this.props.keyword} count={this.props.count} showType={this.props.showType} id={this.props.id} />
+          <SearchBar setKeyword={this.props.setKeyword.bind(this)} keyword={this.props.keyword} count={this.props.count} showType={this.props.showType} id={this.props.id} />
           <DetailBar setShowType={this.props.setShowType.bind(this)} showType={this.props.showType} />
         </div>
       )
