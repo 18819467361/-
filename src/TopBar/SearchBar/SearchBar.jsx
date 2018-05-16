@@ -1,13 +1,10 @@
 import React, {Component} from 'react'
 import './SearchBar.css'
-import Tool from '../../api'
 class SearchBar extends Component {
   constructor () {
     super()
     this.state = {
       flag: ''
-      // preCount: 10,
-      // hadDidMount: false
     }
   }
 
@@ -63,22 +60,9 @@ class SearchBar extends Component {
   }
   // // 挂载后抓取数据
   componentDidMount () {
-    // this.state.hadDidMount = true
-    // Tool.fetchData(this.props.showType, this.props.count, this.props.id, this.props.keyword, this.props.setContents.bind(this))
     const input = this.input
     input.focus()
   }
-  // // 组件重新渲染后抓取数据
-  // componentDidUpdate () {
-  //   if (this.state.hadDidMount !== true) {
-  //     let showType = this.props.showType.match(/book|music|movie/)
-  //     if (this.state.preCount !== this.props.count + this.props.keyword + showType[0]) {
-  //       this.state.preCount = this.props.count + this.props.keyword + showType[0]
-  //       Tool.fetchData(this.props.showType, this.props.count, this.props.id, this.props.keyword, this.props.setContents.bind(this))
-  //     }
-  //   } else {
-  //     this.state.hadDidMount = false
-  //   }
-  // }
+
 }
 module.exports = SearchBar

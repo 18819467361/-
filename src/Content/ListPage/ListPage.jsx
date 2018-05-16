@@ -34,6 +34,11 @@ class ListPage extends Component {
   render () {
     const contents = this.props.contents
     const datas = contents.books || contents.subjects || contents.musics || []//
+    const total = contents.total + 10
+    let bottomNote = '上拉加载更多...'
+    if (total === 10 || total < this.props.count) {
+          bottomNote = '没有咯...'
+     }
     return (
       <div id='contents' onClick={this.initShow()} onTouchMove={this.reLoadOrLoadMore.bind(this)}>
         <div className='pullToUpdate'>
@@ -45,7 +50,7 @@ class ListPage extends Component {
           )
         })}
         <div className={'smallLoading_content'} >
-                    上拉加载更多...
+            {bottomNote}
         </div>
       </div>
     )
