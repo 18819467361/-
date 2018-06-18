@@ -43,7 +43,6 @@ const Tool = {
     return src
   },
   getData: function (src, callback) {
-      console.log(src,'src');
     fetchJsonp(src)
       .then(function (response) {
         return response.json()

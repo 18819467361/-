@@ -68,16 +68,13 @@ class Contents extends Component {
 
     // 挂载后抓取数据
     componentDidMount () {
-        console.log('in did mount')
         this.state.hadDidMount = true
         Tool.fetchData(this.props.showType, this.props.count, this.props.id, this.props.keyword, this.setContents.bind(this))
     }
     // 组件重新渲染后抓取数据
     componentDidUpdate () {
-        console.log('in did update');
         if (this.state.hadDidMount !== true) {
             let showType =this.props.showType
-            console.log(this.state.preSituation,'situation');
             if (this.state.preSituation !== this.props.count + this.props.keyword + showType) {
                 this.state.preSituation = this.props.count + this.props.keyword + showType
                 Tool.fetchData(this.props.showType, this.props.count, this.props.id, this.props.keyword, this.setContents.bind(this))

@@ -3990,7 +3990,6 @@ var Tool = {
     return src;
   },
   getData: function getData(src, callback) {
-    console.log(src, 'src');
     (0, _fetchJsonp2.default)(src).then(function (response) {
       return response.json();
     }).then(function (json) {
@@ -23300,7 +23299,6 @@ var Contents = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.log('in did mount');
       this.state.hadDidMount = true;
       _api2.default.fetchData(this.props.showType, this.props.count, this.props.id, this.props.keyword, this.setContents.bind(this));
     }
@@ -23309,10 +23307,8 @@ var Contents = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
-      console.log('in did update');
       if (this.state.hadDidMount !== true) {
         var showType = this.props.showType;
-        console.log(this.state.preSituation, 'situation');
         if (this.state.preSituation !== this.props.count + this.props.keyword + showType) {
           this.state.preSituation = this.props.count + this.props.keyword + showType;
           _api2.default.fetchData(this.props.showType, this.props.count, this.props.id, this.props.keyword, this.setContents.bind(this));
